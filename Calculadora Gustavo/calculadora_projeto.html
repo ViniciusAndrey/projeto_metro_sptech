@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<h1>Calculadora de Publico</h1> <br>
+<h2>Nesta Calculadora você pode calcular o publico alvo para um anuncio que atinja as suas espectativas</h2>
+<body>
+    
+    Idade Publico Alvo: <input type="text" id="input_idade" > <br>
+    <br><button onclick="calcularidade()">Melhor anuncio de acordo com idade</button> <br>
+    <br>Gênero Publico Alvo: <input type="text" id="input_genero" > Se dois generos: homem/mulher<br>
+    <br><button onclick="calculargenero()">Melhor Anuncio de acordo com gênero</button> <br>
+    <div id="div_mensagem"></div> <br>
+    <div id="div_mensagem2"></div>
+</body>
+</html>
+
+<script>
+    function calcularidade() {
+        var idade = input_idade.value;
+
+        if (idade >= 0 && idade <= 12) {
+            div_mensagem.innerHTML = ` 
+            Relacionado a idade: <br> 
+            Anúncios de brinquedos educativos, jogos de vídeo game apropriados para a idade, livros infantis, e produtos alimentícios saudáveis. <br> 
+            Anúncios de parques temáticos, atrações familiares e eventos especiais para crianças. <br>
+            Anúncios de escolas de arte, música e dança que ofereçam aulas para crianças. <br>`
+
+        }    
+        
+        if (idade >= 13 && idade <= 18) {
+            div_mensagem.innerHTML = ` 
+            Relacionado a idade: <br> 
+            Anúncios de produtos ou serviços relacionados à tecnologia, como smartphones, aplicativos, jogos, etc. <br>
+            Anúncios de moda e estilo de vida, como roupas, acessórios e calçados da moda jovem. <br>
+            Anúncios de eventos culturais, festivais de música, cinemas, etc. <br>
+            Promoções de viagens econômicas ou pacotes de turismo estudantil. <br>`
+
+        }
+
+        if (idade >= 19 && idade <= 35) {
+            div_mensagem.innerHTML = ` 
+            Relacionado a idade: <br> 
+            Anúncios de moda urbana, acessórios de tecnologia, e produtos relacionados ao estilo de vida jovem. <br>
+            Anúncios de viagens econômicas, pacotes de turismo jovem, e experiências de aventura. <br>
+            Anúncios de produtos de tecnologia, eletrônicos e gadgets inovadores. <br>
+            Anúncios de eventos culturais, festivais de música, exposições de arte e shows ao vivo. <br>`
+
+        }
+        
+        if (idade >= 36 && idade <= 100) {
+            div_mensagem.innerHTML = `
+            Relacionado a idade: <br> 
+            Anúncios de produtos e serviços relacionados à saúde e bem-estar, como planos de saúde, academias, e produtos para cuidados com a pele. <br>
+            Anúncios de produtos e serviços financeiros, como investimentos, seguros, e planejamento financeiro para a aposentadoria. <br>
+            Anúncios de produtos e serviços relacionados à família e ao lar, como mobiliário, eletrodomésticos, e produtos para jardinagem. <br>
+            Anúncios de viagens de luxo, cruzeiros, e destinos turísticos relaxantes. <br>`
+
+        }
+
+    }  
+       
+    function calculargenero() {
+        var genero = input_genero.value;
+
+        if (genero === 'homem') {
+        div_mensagem2.innerHTML = `
+        Relacionado ao genero: <br> 
+        Anúncios de produtos de cuidados pessoais masculinos, como produtos para barba, barbeadores elétricos e produtos para cabelo. <br>
+        Anúncios de roupas masculinas, calçados esportivos, relógios e acessórios de moda. <br>
+        Anúncios de produtos eletrônicos, como smartphones, laptops, consoles de jogos e gadgets. <br>
+        Anúncios de produtos automotivos, ferramentas, equipamentos esportivos e hobbies masculinos. <br>`
+        
+    }
+    
+    if (genero === 'mulher') {
+        div_mensagem2.innerHTML = `
+        Relacionado ao genero: <br> 
+        Anúncios de produtos de beleza, como maquiagem, produtos para cuidados com a pele e cabelo. <br>
+        Anúncios de roupas femininas, sapatos de salto alto, acessórios de moda e bolsas. <br>
+        Anúncios de serviços relacionados à maternidade, como produtos para bebês e cuidados infantis. <br>
+        Anúncios de produtos de saúde e bem-estar, incluindo ioga, ginástica, alimentos saudáveis e suplementos vitamínicos. <br>`
+    }
+
+    if (genero === 'homem/mulher') {
+        div_mensagem2.innerHTML = `
+        Relacionado ao genero: <br>
+        Anúncios de produtos e serviços relacionados ao lar, decoração, mobiliário e eletrodomésticos. <br>
+        Anúncios de alimentos e bebidas, restaurantes, delivery de comida e experiências gastronômicas. <br>
+        Anúncios de viagens e turismo, pacotes de férias, hotéis, companhias aéreas e aluguel de carros. <br>
+        Anúncios de entretenimento, eventos culturais, filmes, música, teatro e esportes. <br>`
+   }
+
+    }
+
+</script>

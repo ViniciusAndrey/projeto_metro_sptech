@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora Financeira!</title>
+</head>
+<body>
+  <h2>Calculadora Financeira!</h2>
+  <p><b>Calcular lucros ou prejuizos.</b></p> <br>
+
+  <span>Coloque um horário:</span> <br> <br>
+  <input type="number" id="input_horario"> <br>
+  <span>Coloque um investimento (R$):</span> <br> <br>
+  <input type="number" id="input_investimento"> <br> <br>
+
+  <button onclick="calcular()">Ver Resultados</button> 
+  <div id="div_mensagem"></div>
+</body>
+</html>
+</body>
+</html>
+
+
+
+<script>
+
+function calcular() {
+
+var horario = input_horario.value;
+var investimento = input_investimento.value
+var calcular_inv = investimento * 0.25
+var calcular_inv2 = investimento / 25
+var calcular_inv3 = investimento / 40
+
+
+if (horario >= 6 && horario <= 8) {
+
+    div_mensagem.innerHTML = `Este horário é perfeito para você colocar sua propaganda <br> 
+        Se você colocar propagandas sobre Noticias do Brasil você tera um lucro de: R$${calcular_inv}.`
+    
+    } else if (horario >= 9 && horario <= 17) {
+
+        div_mensagem.innerHTML = `Não recomendamos a colocar muitos anúncios na estação este horário. <br>
+        Pois sua empresa terá perda de: R$${calcular_inv2}.`
+        
+    } else if(horario >= 18 && horario <= 20){
+
+        div_mensagem.innerHTML = `Este horário é perfeito para você colocar sua propaganda <br> 
+        Se você passar propagandas de restaurantes sua empresa tera um lucro de: R$${calcular_inv}.`
+
+
+    } else if(horario >= 21 && horario <= 23){
+
+        div_mensagem.innerHTML = `Este horário ficara mais tranquila a estação, então recomendo não colocar muitos anúncios. <br>
+        Pois sua empresa terá perda de: R$${calcular_inv3}.`
+        
+    } else {
+
+        alert('O horário que você colocou não está disponível');
+        
+    }
+
+  }
+
+
+</script>

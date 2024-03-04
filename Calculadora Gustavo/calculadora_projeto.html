@@ -22,16 +22,24 @@
     function calcularidade() {
         var idade = input_idade.value;
 
-        if (idade >= 0 && idade <= 12) {
+        if (idade >= 0) {
             div_mensagem.innerHTML = ` 
             Relacionado a idade: <br> 
             Anúncios de brinquedos educativos, jogos de vídeo game apropriados para a idade, livros infantis, e produtos alimentícios saudáveis. <br> 
             Anúncios de parques temáticos, atrações familiares e eventos especiais para crianças. <br>
             Anúncios de escolas de arte, música e dança que ofereçam aulas para crianças. <br>`
 
+            if (idade <= 12) {
+                div_mensagem.innerHTML = ` 
+                Relacionado a idade: <br> 
+                Anúncios de brinquedos educativos, jogos de vídeo game apropriados para a idade, livros infantis, e produtos alimentícios saudáveis. <br> 
+                Anúncios de parques temáticos, atrações familiares e eventos especiais para crianças. <br>
+                Anúncios de escolas de arte, música e dança que ofereçam aulas para crianças. <br>`
+
+            }
         }    
         
-        if (idade >= 13 && idade <= 18) {
+        if (idade >= 13) {
             div_mensagem.innerHTML = ` 
             Relacionado a idade: <br> 
             Anúncios de produtos ou serviços relacionados à tecnologia, como smartphones, aplicativos, jogos, etc. <br>
@@ -39,9 +47,20 @@
             Anúncios de eventos culturais, festivais de música, cinemas, etc. <br>
             Promoções de viagens econômicas ou pacotes de turismo estudantil. <br>`
 
+            if (idade <= 18) {
+                div_mensagem.innerHTML = ` 
+                Relacionado a idade: <br> 
+                Anúncios de produtos ou serviços relacionados à tecnologia, como smartphones, aplicativos, jogos, etc. <br>
+                Anúncios de moda e estilo de vida, como roupas, acessórios e calçados da moda jovem. <br>
+                Anúncios de eventos culturais, festivais de música, cinemas, etc. <br>
+                Promoções de viagens econômicas ou pacotes de turismo estudantil. <br>`   
+
+            }
+
+
         }
 
-        if (idade >= 19 && idade <= 35) {
+        if (idade >= 19) {
             div_mensagem.innerHTML = ` 
             Relacionado a idade: <br> 
             Anúncios de moda urbana, acessórios de tecnologia, e produtos relacionados ao estilo de vida jovem. <br>
@@ -49,9 +68,19 @@
             Anúncios de produtos de tecnologia, eletrônicos e gadgets inovadores. <br>
             Anúncios de eventos culturais, festivais de música, exposições de arte e shows ao vivo. <br>`
 
+            if (idade <= 35) {
+                div_mensagem.innerHTML = ` 
+                Relacionado a idade: <br> 
+                Anúncios de moda urbana, acessórios de tecnologia, e produtos relacionados ao estilo de vida jovem. <br>
+                Anúncios de viagens econômicas, pacotes de turismo jovem, e experiências de aventura. <br>
+                Anúncios de produtos de tecnologia, eletrônicos e gadgets inovadores. <br>
+                Anúncios de eventos culturais, festivais de música, exposições de arte e shows ao vivo. <br>`    
+
+            }
+
         }
         
-        if (idade >= 36 && idade <= 100) {
+        if (idade >= 36) {
             div_mensagem.innerHTML = `
             Relacionado a idade: <br> 
             Anúncios de produtos e serviços relacionados à saúde e bem-estar, como planos de saúde, academias, e produtos para cuidados com a pele. <br>
@@ -59,6 +88,15 @@
             Anúncios de produtos e serviços relacionados à família e ao lar, como mobiliário, eletrodomésticos, e produtos para jardinagem. <br>
             Anúncios de viagens de luxo, cruzeiros, e destinos turísticos relaxantes. <br>`
 
+            if (idade <= 100) {
+                div_mensagem.innerHTML = `
+                Relacionado a idade: <br> 
+                Anúncios de produtos e serviços relacionados à saúde e bem-estar, como planos de saúde, academias, e produtos para cuidados com a pele. <br>
+                Anúncios de produtos e serviços financeiros, como investimentos, seguros, e planejamento financeiro para a aposentadoria. <br>
+                Anúncios de produtos e serviços relacionados à família e ao lar, como mobiliário, eletrodomésticos, e produtos para jardinagem. <br>
+                Anúncios de viagens de luxo, cruzeiros, e destinos turísticos relaxantes. <br>` 
+
+            }
         }
 
     }  
@@ -66,7 +104,7 @@
     function calculargenero() {
         var genero = input_genero.value;
 
-        if (genero === 'homem') {
+        if (genero == 'homem') {
         div_mensagem2.innerHTML = `
         Relacionado ao genero: <br> 
         Anúncios de produtos de cuidados pessoais masculinos, como produtos para barba, barbeadores elétricos e produtos para cabelo. <br>
@@ -76,7 +114,7 @@
         
     }
     
-    if (genero === 'mulher') {
+    if (genero == 'mulher') {
         div_mensagem2.innerHTML = `
         Relacionado ao genero: <br> 
         Anúncios de produtos de beleza, como maquiagem, produtos para cuidados com a pele e cabelo. <br>
@@ -85,7 +123,7 @@
         Anúncios de produtos de saúde e bem-estar, incluindo ioga, ginástica, alimentos saudáveis e suplementos vitamínicos. <br>`
     }
 
-    if (genero === 'homem/mulher') {
+    if (genero == 'homem/mulher') {
         div_mensagem2.innerHTML = `
         Relacionado ao genero: <br>
         Anúncios de produtos e serviços relacionados ao lar, decoração, mobiliário e eletrodomésticos. <br>

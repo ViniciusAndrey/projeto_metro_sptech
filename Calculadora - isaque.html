@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Negócios</title>
+</head>
+<body>
+    <h1>Calculadora de Negócios para lojas Locais</h1>
+
+    <h2>Aqui você pode calcular o quanto será seu ganho através do seu investimento</h2>
+
+    <h3>Vamos lá?</h3>
+
+    <h4>Agora calculamos seus possiveis lucros ou possiveis perdas</h4>
+
+    Coloque quanto você	pretente investir em produtos para sua Loja ($)
+        <input type="text" id="input_invest">
+        <br>
+    Coloque também, um valor fictício de quanto foi investido em cada unidade desse seu produtos ($) <input type="text" id="input_produto">
+    <br>
+    Agora coloque quanto será sua taxa de lucro (%) <input type="text" id="input_lucro">
+    <br> (essa taxa é diretamente relacionada á quanto você vendera seus produtos)
+    <br>
+    <button onclick="calc()">Calcular</button>
+    <button onclick="Preju()">Terei Prejuízo?</button>
+    <div id="div_mensagem"></div>  
+    
+</body>
+</html>
+
+<script>
+
+    function calc(){
+
+        var invest = Number(input_invest.value) //100
+        var txlucro = Number(input_lucro.value) //100%
+        var prod = Number(input_produto.value) //8
+        var lucro = Number(input_produto.value * (input_lucro.value / 100)) 
+        var valor_prod = prod + lucro //16
+        var venda_total = invest / prod * valor_prod  //200
+        var taxa_bruta = (lucro / valor_prod) * 100
+
+        div_mensagem.innerHTML = `Agora a situação é a seguinte, se você investir R$ ${invest} em um único produto, sendo o valor base dele R$ ${prod}. <br>Com a sua Taxa de Lucro sendo ${txlucro}%, esse seu produto sera vendido a R$ ${valor_prod} cada um. Caso seja vendido todas as unidades, <br>seu Lucro por unidade será de R$ ${lucro}, e de R$ ${venda_total} no total, com isso, seu retorno em Margem Bruta por produto será de ${taxa_bruta}%. `
+
+    }
+
+    function Preju(){
+
+
+        if  (taxa_bruta <40 ){
+            div_preju.innerHTML = `Se a sua loja for loja de varejo, sua Margem Bruta para esse produto não esta tão boa, e você pode acabar tendo prejuízo. É recomendado aumentar o valor desse produto, para que sua Margem Bruta fique acima dos 40%`
+        }
+
+        if (taxa_bruta >=40){
+            div_preju.innerHTML = `Se a sua loja for loja de varejo, sua Margem Bruta para esse produto esta em uma porcentagem boa, você esta em uma posição de não correr risco de ter prejuízos, e de tirar um lucro em cima desse produto`
+        }
+
+        if (taxa_bruta >70){
+            div_preju.innerHTML = `Se a sua loja for loja de varejo, sua Margem Bruta para esse produto esta exelente, você não corre nenhum risco de ter prejuízo com esse produto, e ainda vai ter um ótimo retorno de lucro` 
+
+        }
+    }
+
+
+</script>

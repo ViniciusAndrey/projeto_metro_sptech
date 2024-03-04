@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira </title>
+</head>
+
+<body style="background-color: rgb(228, 228, 228);">
+
+    <h1>Ganhos Mensais com Espaço Publicitário</h1>
+    <br><br>
+    Nome da Estação:
+    <input type="text" id="input_nome">
+    <br><br>
+    Quantidade de Lojas <input type="text" id="input_qtdLojas">
+    <br><br>
+    Quantidade de Quiosques: <input type="text" id="input_qtdQuiosque">
+    <br><br>
+    Quantidade de Estandes Comerciais: <input type="text" id="input_qtdECom">
+    <br><br>
+    Quantidade de Estandes Promocionais: <input type="text" id="input_qtdEProm">
+    <br><br>
+    <button onclick="calcular()">Calcular Lucros</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+function calcular() {
+    var nome = input_nome.value
+    var qtdLoja = Number (input_qtdLojas.value);
+    var qtdQuiosque = Number (input_qtdQuiosque.value);
+    var qtdECom = Number (input_qtdECom.value);
+    var qtdEProm = Number (input_qtdEProm.value);
+
+    // Calculo feito por quantidade e valor por m²
+    var calculoLojas = qtdLoja * (308 * 20);
+    var calculoQuiosque = qtdQuiosque * (702 * 4);
+    var calculoECom = qtdECom * (397 * 20);
+    var calculoEProm = qtdEProm * (894 * 4);
+    var calculoTotal = calculoLojas + calculoQuiosque + calculoECom + calculoEProm;
+
+    // Calculos feitos com mais 10% de lucro da solução
+    var lucroTotal = calculoTotal + (calculoTotal * 0.1);
+
+    var mensagem = ('<br> A estação ' + nome + ' recebe um lucro individual de: <br>' + 'R$' + calculoLojas + ' com ' + qtdLoja + ' Loja(s) <br>' + 'R$' + calculoQuiosque + ' com ' + qtdQuiosque + ' Quiosque(s) <br>' + 'R$' + calculoECom + ' com ' + qtdECom + ' Estande(s) Comercial(s) <br>' + 'R$' + calculoEProm + ' com ' + qtdEProm + ' Estande(s) Promocional(s) <br>' + 'Totalizando um lucro de R$ ' + lucroTotal + ' com os 10% gerados pela solução.');
+
+    div_mensagem.innerHTML = mensagem;
+
+}
+
+
+</script>

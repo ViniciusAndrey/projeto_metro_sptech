@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+</head>
+<body>
+    <h1>Calculadora Financeira</h1>
+    <hr>
+    Quantidade que quer ganhar de lucro na sua empresa: <input type="text" id="inputEmpresa"> <br>
+    <br>
+    Quantidade para investir: <input type="text" id="inputInvestir"> <br>
+    <br>
+    Qual o publico alvo: <input type="text" id="inputPublico"> <br>
+    <br>
+
+    <button onclick="objetivo()">Objetivo da Empresa</button>
+    <button onclick="retorno()">Retorno da sua Empresa</button>
+<br>
+<br>
+    <div id="div_menssagem">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function retorno(){
+        var investir = Number(inputInvestir.value);
+        var publico = Number(inputPublico.value);
+
+        var conta1 = investir * 0.10
+        var conta2 = investir * 0.25
+        var conta3 = investir * 0.50
+        var conta4 = investir / 100 * 90
+        var conta5 = investir / 100 * 75
+        var conta6 = investir / 100 * 50
+
+        var menssagem1 = 'Com o seu investimento de R$' +investir+ ', Voce tera um retorno de R$' + conta1
+        var menssagem2 = 'Com o seu investimento de R$' +investir+ ', Voce tera um retorno de R$' + conta2
+        var menssagem3 = 'Com o seu investimento de R$' +investir+ ', Voce tera um retorno de R$' + conta3
+        var menssagem4 = 'Com o seu investimento de R$' +investir+ ', Voce tera uma perda de R$' + conta4
+        var menssagem5 = 'Com o seu investimento de R$' +investir+ ', Voce tera uma perda de R$' + conta5
+        var menssagem6 = 'Com o seu investimento de R$' +investir+ ', Voce tera uma perda de R$' + conta6
+
+        if (investir >=5000) {
+            div_menssagem.innerHTML = menssagem1;
+        }
+        if (investir >=10000) {
+            div_menssagem.innerHTML = menssagem2;
+        }
+        if (investir >=20000) {
+            div_menssagem.innerHTML = menssagem3;
+        }
+        if (investir <=5000) {
+            div_menssagem.innerHTML = menssagem4;
+        }
+        if (investir <=2500) {
+            div_menssagem.innerHTML = menssagem5;
+        }
+        if (investir <=1000) {
+            div_menssagem.innerHTML = menssagem6;
+        }
+    }
+function objetivo(){
+    var empresa = Number(inputEmpresa.value);
+    
+    var valor1 = 'Se seu objetivo for ter um crescimento em ate 10% em sua empresa, voce devera investir R$5.000,00'
+    var valor2 = 'Se seu objetivo for ter um crescimento em ate 25% em sua empresa, voce devera investir R$10.000,00'
+    var valor3 = 'Se seu objetivo for ter um crescimento em ate 50% em sua empresa, voce devera investir R$20.000,00'
+
+    if (empresa <=10) {
+        div_menssagem.innerHTML = valor1;
+    }
+    if (empresa <=25) {
+        div_menssagem.innerHTML = valor2;
+    }
+    if (empresa >=50) {
+        div_menssagem.innerHTML = valor3;
+    }
+}
+</script>

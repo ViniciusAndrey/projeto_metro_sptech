@@ -1,0 +1,31 @@
+    function melhorHorario(){
+        var empresa = inputEmpresa.value;
+        var publico = inputPublico.value;
+
+
+        var alerta = 'Voce tem que colocar apenas: estudante, adulto, crianca, idoso, trabalhador'
+        var menssagem1 = 'Se seu proposito for audiencia de estudantes os melhores horarios sao as <b>7:00</b>, <b>12:00</b>, <b>19:00</b> e as <b>23:00</b>'
+        var menssagem2 = 'Se seu proposito for audiencia de adultos os melhores horarios sao as <b>7:00</b>, <b>12:00</b> e as <b>19:00</b>'
+        var menssagem3 = 'Se seu proposito for audiencia de crianca os melhores horarios sao as <b>12:00</b> e as <b>15:00</b>'
+        var menssagem4 = 'Se seu proposito for audiencia de idoso os melhores horarios sao as <b>9:00</b>, <b>12:00</b> e as <b>14:00</b>'
+        var menssagem5 = 'Se seu proposito for audiencia de trabalhadores os melhores horarios sao as <b>7:00</b>, <b>12:00</b>, <b>15:00</b>, <b>18:00</b> e as <b>20:00</b>'
+        
+        if (publico =! ) {
+
+        if (publico =  'estudantes') {
+            div_menssagem.innerHTML = menssagem1;
+        } 
+        if (publico = 'adultos') {
+            div_menssagem.innerHTML = menssagem2;
+        } 
+        if (publico = 'crianca') {
+            div_menssagem.innerHTML = menssagem3;
+        } 
+        if (publico = 'idoso') {
+            div_menssagem.innerHTML = menssagem4;
+        } 
+        if (publico = 'trablhador') {
+            div_menssagem.innerHTML = menssagem5;
+        }
+        }
+    }

@@ -8,7 +8,7 @@
   /* Corpo da página */
   body {
     margin-top: 5px;
-    background-color: hsla(0, 0%, 100%, 0.767);
+    background-color: #374962;
     color: #333;
     font-size: 16px;
   }
@@ -16,15 +16,17 @@
   /* Container principal */
   .div {
     width: 800px;
+    background-color: white;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #1D314D;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   /* Título */
   h2 {
+    color: #1D314D;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -41,7 +43,7 @@
   
   /* Botão */
   button {
-    background-color: rgb(190, 190, 190);
+    background-color: #374962;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -53,14 +55,14 @@
   }
   
   button:hover {
-    background-color: #949494;
+    background-color: #1D314D;
   }
   
   /* Mensagem de Resultado */
   #div_mensagem {
     margin-top: 20px;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #1D314D;
     border-radius: 5px;
     background-color: #fafafa;
   }

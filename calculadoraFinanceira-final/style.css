@@ -7,13 +7,13 @@
   
   /* Corpo da página */
   body {
-    margin-top: 5px;
+    margin-top: 75px; /* PODE A VER ALTERAÇÃO DEPENDENDO DO MONITOR, ENTÃO SERIA MAIS FACIL USAR FLEX-BOX */
     background-color: #374962;
     color: #333;
     font-size: 16px;
   }
   
-  /* Container principal */
+  /* div principal (o bloco inteiro) */
   .div {
     width: 800px;
     background-color: white;
@@ -24,7 +24,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  /* Título */
+  /* titulo */
   h2 {
     color: #1D314D;
     font-size: 24px;
@@ -32,7 +32,7 @@
     margin-bottom: 10px;
   }
   
-  /* Inputs */
+  /* inputs */
   input {
     width: 300px;
     padding: 5px;
@@ -41,7 +41,7 @@
     margin-bottom: 10px;
   }
   
-  /* Botão */
+  /* botao */
   button {
     background-color: #374962;
     color: #fff;
@@ -65,25 +65,4 @@
     border: 1px solid #1D314D;
     border-radius: 5px;
     background-color: #fafafa;
-  }
-  
-  /* Estilos específicos da mensagem */
-  #div_mensagem h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  #div_mensagem ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 10px;
-  }
-  
-  #div_mensagem li {
-    margin-bottom: 5px;
-  }
-  
-  #div_mensagem strong {
-    font-weight: bold;
   }

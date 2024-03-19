@@ -1,6 +1,6 @@
-create database SubTech;
+create database FlowTech;
 
-use SubTech;
+use FlowTech;
 
 create table cadastro (
 id int primary key auto_increment,
@@ -50,7 +50,7 @@ insert into dado_sensor values
 (default, '2024-03-18 15:45:00', 1, 2);
 
 select 
-date_format (horario, '%d/%m/%Y %H:%i:%s') as 'Horário', 
+date_format (horario, '%d/%m/%Y - %H:%i:%s') as 'Horário', 
 contagem as Contagem, 
 nome as 'Nome do sensor', 
 tipoSensor as 'Tipo do sensor'

@@ -1,0 +1,58 @@
+create database SubTech;
+
+use SubTech;
+
+create table cadastro (
+id int primary key auto_increment,
+nome varchar(40),
+dtNasc date,
+CPF char(12) unique,
+email varchar(40),
+tel char(11),
+senha varchar(40),
+constraint chkEmail check (email like ("%@%"))
+) auto_increment = 1; 
+
+create table sensor (
+id_sensor int auto_increment primary key,
+nome varchar(30),
+tipoSensor varchar(40)
+constraint chkTipo check (tipoSensor in("Bloqueio"))
+) auto_increment = 1; 
+
+create table dado_sensor (
+idDado int auto_increment primary key,
+horario datetime default current_timestamp,
+contagem int,
+constraint chkContagem check (contagem in (0, 1)),
+fkSensor int, 
+constraint fkSensorDadosSensor foreign key (fkSensor)
+references sensor(id_sensor)
+); 
+
+insert into cadastro values 
+(default, 'Ana Silva', '1990-05-15', '12345678901', 'ana@teste.com', '11987654321', 'senha123'),
+(default, 'Carlos Souza', '1985-09-20', '98765432109', 'carlos@teste.com', '11912345678', 'senha456');
+
+select nome as Nome,
+date_format (dtNasc, '%d/%m/%Y') as 'Data de Nascimento',
+cpf as CPF,
+email as Email,
+tel as Telefone,
+senha as Senha from cadastro;
+
+insert into sensor values 
+(default, 'Elevador', 'Bloqueio'),
+(default, 'Escada rolante', 'Bloqueio');
+
+insert into dado_sensor values 
+(default, '2024-03-18 10:30:00', 0, 1),
+(default, '2024-03-18 15:45:00', 1, 2);
+
+select 
+date_format (horario, '%d/%m/%Y %H:%i:%s') as 'Horário', 
+contagem as Contagem, 
+nome as 'Nome do sensor', 
+tipoSensor as 'Tipo do sensor'
+ from dado_sensor join sensor 
+	on id_sensor = fkSensor;

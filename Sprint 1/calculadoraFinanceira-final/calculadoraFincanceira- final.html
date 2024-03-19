@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora financeira</title>
+</head>
+
+<body>
+    <div class="div">
+        <h2>Calculadora financeira</h2>
+        Digite o nome da estação da linha 4- amarela: <input type="text" id="input_estacao"> <br><br>
+        <span>Na estação escolhida, considerando os 4 tipos de comércios existentes nas estações dos metrôs, digite o número desejado de novos...</span> <br><br>
+        Estandes promocionais: <input type="text" id="input_estandes"> <br><br>
+        Estandes comerciais: <input type="text" id="input_estandesCom"> <br><br>
+        Lojas: <input type="text" id="input_lojas"> <br><br>
+        Quiosques: <input type="text" id="input_quiosques"> <br><br>
+        <button onclick="lucro()">Calcular receita</button> <br><br>
+        <div id="div_mensagem"></div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function lucro() {
+        var nomeEstacao= input_estacao.value;
+        var estandes= Number (input_estandes.value);
+        var estandesComerciais= Number (input_estandesCom.value);
+        var lojas= Number (input_lojas.value);
+        var quisques= Number (input_quiosques.value);
+
+        var lucroEstandes= estandes * 894 * 4;
+        var lucroEstandesComerciais= estandesComerciais * 397 * 4;
+        var lucroLojas= lojas * 308 * 20;
+        var lucroQuiosques= 702 * 4;
+
+        var lucroMensal= lucroEstandes + lucroEstandesComerciais + lucroLojas + lucroQuiosques;
+        var lucroAnual= lucroMensal * 12;
+
+        div_mensagem.innerHTML= `Nesse cenário, a receita mensal gerada com o aluguel do espaço para novos comércios é de: <br>
+        R$${lucroEstandes} com estandes promocionais (considerando que o aluguel do m² é de R$894); <br>
+        R$${lucroEstandesComerciais} com estandes comerciais (considerando que o aluguel do m² é de R$397); <br>
+        R$${lucroLojas} com lojas (considerando que o aluguel do m² é de R$308); <br>
+        R$${lucroQuiosques} com quiosques (considerando que o aluguel do m² é de R$702); <br>
+        Totalizando R$${lucroMensal} ao mês e  R$${lucroAnual} ao ano somente na estação ${nomeEstacao}. <br> <br>
+        OBS: o cálculo do valor do aluguel foi feito multiplicando o valor do metro quadrado pelo tamanho do espaço alugado. Na variável do tamanho do espaço, foram utilizados os valores mínimos possíveis para cada categoria apresentada. <br>
+        Foram considerados estandes promocionais, quiosques, e estandes comerciais de 4m² e lojas de 20m².  
+        `;
+    }
+</script>
+
